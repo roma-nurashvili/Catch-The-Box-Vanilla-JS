@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: #eeaeca;
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  position: relative;
+
+  h1 {
+    color: #e83867;
+    font-size: 44px;
+  }
+
+  .timeAndScore {
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #e83867;
+
+    p {
+      font-size: 26px;
+      font-weight: bold;
+    }
+  }
+
+  .gameArea {
+    border: 10px double #e83867;
+    border-radius: 20px;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    padding: 5px;
+    position: relative;
+    background-color: rgb(228, 220, 220);
+
+    .box {
+      width: 60px;
+      height: 60px;
+      background-color: #e83867;
+      border-radius: 10px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+  }
+
+  button {
+    width: 120px;
+    height: 50px;
+    color: #e83867;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: inherit;
+    border: 5px solid #e83867;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      border: 5px solid #b90132;
+      color: #b90132;
+    }
+    &:active {
+      border: 5px solid purple;
+      color: purple;
+    }
+  }
+
+  .gameOver {
+    background: #eeaeca;
+    background: radial-gradient(
+      circle,
+      rgba(238, 174, 202, 1) 0%,
+      rgba(148, 187, 233, 1) 100%
+    );
+    box-shadow: 0 0 5px 5px #e83867;
+    border-radius: 10px;
+    color: #e83867;
+    text-shadow: 3px 3px 3px white;
+    width: 600px;
+    height: 100px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 72px;
+    position: absolute;
+    top: 50%;
+    animation: showUp 1s ease 1 forwards;
+  }
+}
+
+@keyframes showUp {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes goAway {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
